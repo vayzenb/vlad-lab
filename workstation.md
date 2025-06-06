@@ -1,32 +1,26 @@
 # Getting started on the workstation
 
 
-### Overview
+## Welcome to ARTOO
 
-Overview text here
+Artoo is the vlad and olson lab shared work station. 
+
+It contains a 96 core AMD Threripper CPU, 2 NVIDIA RTX 6000 Ada GPUs, 512 GB of memory, and 60+ TB of storage.
 
 contact info: vayzenb@temple.edu
 
-### Connecting to the workstation
+## Connecting to the wArtooorkstation
 
 Using a terminal:
 ssh your_tuid@cla19779.tu.temple.edu
 
 e.g., ssh tuc66980@cla19779.tu.temple.edu
 
-Using remote desktop:
-1. Download chrome remote desktop: https://remotedesktop.google.com/
-2. Select Setup via ssh
+See workflow recommendations below
 
+### Organization of the Artoo
 
-Using VSCode:
-1. Download VSCode: 
-2. 
-
-
-### Organization of the workstation
-
-The workstation is split into **/zpool/vladlab** and **/zpool/olsonlab** directories
+Artoo is split into **/zpool/vladlab** and **/zpool/olsonlab** directories
 
 Within each lab directory is a **data_drive** and a **active_drive** folder. 
 
@@ -41,15 +35,38 @@ See below for an example file structure for a hypothetical fMRI study 'project1'
 
 ![image](files/directory_structure.png)
 
-Note, these are just recommendedations given typical backup needs. There is not a hard constraint on which files can go where.
+Note, these are just recommendedations given typical backup needs. There are no hard constraint on which files can go where.
 
 ### Programs already installed on the workstation
 
 Coding: anaconda, Matlab_R2025a, R 
 
-MRI: FSL, Freesurfer 8.0.0 & 7.4.1, AFNI, ANTS, wb_workbench
+MRI: FSL, Freesurfer 8.0.0 & 7.4.1*, AFNI, ANTS, wb_workbench
 
-*To install new software or different versions of existing software email Vlad
-*Any python-supported packages should be installed in your own conda environment
+*By default, version 8.0.0 of freesurfer is the one loaded at startup for each user. Talk to vlad if you need a different version or need to be able to switch between versions
 
+### Managing different packages and coding libraries
+
+Different tasks may require different code libraries or packages. Each might have their own dependancies and installing too many of these in the same place can cause them to interfere with eachother. 
+
+To address this, the workstation has [anaconda](https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
+
+### Suggested workflow
+
+The best way to work on Artoo is via the terminal or VSCode.
+
+To work remotely using VSCode do:
+1. Download chrome remote desktop: https://remotedesktop.google.com/
+2. Hit ctrl/cmd + shift + P and start typing  Remote-SSH: Connect to Host
+3. Plug in your connection info (e.g., tuc66980@cla19779.tu.temple.edu)
+
+Sometimes we want to browse through the files from our comptuer without using the terminal. 
+
+To mount artoo on PCs: 
+1. install https://github.com/winfsp/sshfs-win
+2. Right click on ThisPC and select "map network"
+3. Select a drive and paste: \\sshfs\tuc66980@cla19779.tu.temple.edu\..\..\zpool\
+
+To mount artoo on macs:
+1. ask someone with mac to figure it out...
 
