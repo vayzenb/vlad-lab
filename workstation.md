@@ -39,26 +39,7 @@ Each drive is backed up on a regular basis using different schedules. Because **
 
 See below for an example file structure for a hypothetical fMRI study 'project1'. The raw and preprocessed fMRI data would be stored in data_drive, ideally in [BIDS format](https://bids.neuroimaging.io/index.html), and the code for analyzing the data would be stored in personal folder in active_drive, ideally in a folder that syncs to [github](https://docs.github.com/en/get-started/git-basics).
 
-.  
-└── /zpool/  
-    ├── vladlab/  
-    │   ├── data_drive/  
-    │   │   ├── fmri_project1/  
-    │   │   │   ├── sub-001  
-    │   │   │   ├── sub-002  
-    │   │   │   └── ...  
-    │   │   ├── fmri_project2  
-    │   │   └── image_sets  
-    │   └── active_drive/  
-    │       └── vlad/  
-    │           └── git_repos/  
-    │               ├── project1_code/  
-    │               │   ├── analyses  
-    │               │   ├── tasks  
-    │               │   ├── figures  
-    │               │   └── results  
-    │               └── project2_code  
-    └── olsonlab/  
+![image](files/directory_structure.png)
 
 Note, these are just recommendedations given typical backup needs. There is not a hard constraint on which files can go where.
 
