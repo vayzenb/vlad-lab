@@ -5,11 +5,11 @@
 
 Artoo is the vlad and olson lab shared work station. 
 
-It contains a 96 core AMD Threripper CPU, 2 NVIDIA RTX 6000 Ada GPUs, 512 GB of memory, and 60+ TB of storage.
+It contains a 96 core AMD Threadripper CPU, 2 NVIDIA RTX 6000 Ada GPUs, and 512 GB of memory
 
 contact info: vayzenb@temple.edu
 
-## Connecting to the wArtooorkstation
+## Connecting to the Artoo
 
 Using a terminal:
 ssh your_tuid@cla19779.tu.temple.edu
@@ -18,7 +18,7 @@ e.g., ssh tuc66980@cla19779.tu.temple.edu
 
 See workflow recommendations below
 
-### Organization of the Artoo
+### Organization of the workstation
 
 Artoo is split into **/zpool/vladlab** and **/zpool/olsonlab** directories
 
@@ -51,6 +51,8 @@ Different tasks may require different code libraries or packages. Each might hav
 
 To address this, the workstation has [anaconda](https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
 
+I also highly recommend you organize your code into git hub repositories, or repos.
+
 ### Suggested workflow
 
 The best way to work on Artoo is via the terminal or VSCode.
@@ -68,5 +70,5 @@ To mount artoo on PCs:
 3. Select a drive and paste: \\sshfs\tuc66980@cla19779.tu.temple.edu\..\..\zpool\
 
 To mount artoo on macs:
-1. ask someone with mac to figure it out...
+1. ask someone with a mac to figure it out...
 
