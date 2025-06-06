@@ -41,24 +41,24 @@ See below for an example file structure for a hypothetical fMRI study 'project1'
 
 .  
 └── /zpool/  
-&nbsp    ├── vladlab/  
-&nbsp    │&nbsp&nbsp   ├── data_drive/  
-    │&nbsp   │&nbsp   ├── fmri_project1/  
-    │&nbsp   │&nbsp   │&nbsp   ├── sub-001  
-    │&nbsp   │&nbsp   │&nbsp   ├── sub-002  
-    │&nbsp   │&nbsp   │&nbsp   └── ...  
-    │&nbsp   │&nbsp   ├── fmri_project2  
-    │&nbsp   │&nbsp   └── image_sets  
-    │&nbsp   └── active_drive/  
-    │&nbsp       └── vlad/  
-    │&nbsp           └── git_repos/  
-    │&nbsp               ├── project1_code/  
-    │&nbsp               │&nbsp   ├── analyses  
-    │&nbsp               │&nbsp   ├── tasks  
-    │&nbsp               │&nbsp   ├── figures  
-    │&nbsp               │&nbsp   └── results  
-    │&nbsp               └── project2_code  
-&nbsp    └── olsonlab/  
+    ├── vladlab/  
+    │   ├── data_drive/  
+    │   │   ├── fmri_project1/  
+    │   │   │   ├── sub-001  
+    │   │   │   ├── sub-002  
+    │   │   │   └── ...  
+    │   │   ├── fmri_project2  
+    │   │   └── image_sets  
+    │   └── active_drive/  
+    │       └── vlad/  
+    │           └── git_repos/  
+    │               ├── project1_code/  
+    │               │   ├── analyses  
+    │               │   ├── tasks  
+    │               │   ├── figures  
+    │               │   └── results  
+    │               └── project2_code  
+    └── olsonlab/  
 
 Note, these are just recommendedations given typical backup needs. There is not a hard constraint on which files can go where.
 
