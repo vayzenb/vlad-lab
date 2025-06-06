@@ -16,6 +16,8 @@ ssh your_tuid@cla19779.tu.temple.edu
 
 e.g., ssh tuc66980@cla19779.tu.temple.edu
 
+To connect from off-campus, first request Temple VPN access via TUHelp
+
 See workflow recommendations below
 
 ### Organization of the workstation
@@ -51,9 +53,7 @@ Different tasks may require different code libraries or packages. Each might hav
 
 To address this, the workstation has [anaconda](https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
 
-I also highly recommend you organize your code into git hub repositories, or repos.
-
-### Suggested workflow
+### Recommendations
 
 The best way to work on Artoo is via the terminal or VSCode.
 
@@ -71,4 +71,9 @@ To mount artoo on PCs:
 
 To mount artoo on macs:
 1. ask someone with a mac to figure it out...
+
+I also highly recommend you organize your code into git hub repositories, or repos.
+
+
+
 
