@@ -1,7 +1,4 @@
-# Getting started on the workstation
-
-
-## Welcome to ARTOO
+# Welcome to ARTOO
 
 Artoo is the vlad and olson lab shared work station. 
 
