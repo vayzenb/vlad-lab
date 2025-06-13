@@ -1,21 +1,35 @@
 # Welcome to ARTOO
 
-Artoo is the vlad and olson lab shared work station. 
+ARTOO is the vlad and olson lab shared work station. 
 
 It contains a 96 core AMD Threadripper CPU, 2 NVIDIA RTX 6000 Ada GPUs, and 512 GB of memory
 
 contact info: vayzenb@temple.edu
 
+## Before you connect
+
+1. Reach out to Vlad (vayzenb@temple.edu) to request access. Include your TU Username (e.g., tuc66980)
+2. If you plan to connect from home, request VPN access via TUHelp
+3. If you are connecting from a Windows computer, install [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install)
+
 ## Connecting to the Artoo
 
-Using a terminal:
+### Using a terminal:
+```bash
 ssh your_tuid@cla19779.tu.temple.edu
+# for example, ssh tuc66980@cla19779.tu.temple.edu
+```
 
-e.g., ssh tuc66980@cla19779.tu.temple.edu
+### Using VScode
+1. [Download VSCode ](https://code.visualstudio.com/)
+2. Select extensions on the left-hand side
+3. Install Remote- SSH and Remote Viewer (basically all the Microsoft remote apps)
+4. Open the command pallete (ctrl/cmd + shift + P)
+5. Start typing Remote-SSH connect to host
+6. Paste your connection info: your_tuid@cla19779.tu.temple.edu
 
-To connect from off-campus, first request Temple VPN access via TUHelp
-
-See workflow recommendations below
+### Using chrome remote desktop
+Contact Vlad or George about setting this up
 
 ### Organization of the workstation
 
@@ -36,7 +50,7 @@ See below for an example file structure for a hypothetical fMRI study 'project1'
 
 Note, these are just recommendedations given typical backup needs. There are no hard constraint on which files can go where.
 
-### Programs already installed on the workstation
+## Programs already installed on the workstation
 
 Coding: anaconda, Matlab_R2025a, R 
 
@@ -48,11 +62,17 @@ MRI: FSL, Freesurfer 8.0.0 & 7.4.1*, AFNI, ANTS, wb_workbench
 
 Different tasks may require different code libraries or packages. Each might have their own dependancies and installing too many of these in the same place can cause them to interfere with eachother. 
 
-To address this, the workstation has [anaconda](https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
+To address this, the workstation has [anaconda](https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch, scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
 
-### Recommendations
+**You will not be able to install things into the base environment**
 
-The best way to work on Artoo is via the terminal or VSCode.
+## General Recommendations
+
+The best way to work on ARTOO is via the terminal or VSCode. VSCode supports both data and figure visualization via Jupyter notebooks and you can even visualize neural data using nilearn. 
+
+If you need to browse through files or need a GUI for something like FSL, freesurfer etc. use chrome remote desktop.
+
+I **highly** recommend you organize your code into git hub repositories, or repos. For instructions on getting your github credentials set up on ARTOO, see here.
 
 To work remotely using VSCode do:
 1. Download chrome remote desktop: https://remotedesktop.google.com/
@@ -69,7 +89,7 @@ To mount artoo on PCs:
 To mount artoo on macs:
 1. ask someone with a mac to figure it out...
 
-I also highly recommend you organize your code into git hub repositories, or repos.
+
 
 
 
