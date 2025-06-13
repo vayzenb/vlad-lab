@@ -72,22 +72,8 @@ The best way to work on ARTOO is via the terminal or VSCode. VSCode supports bot
 
 If you need to browse through files or need a GUI for something like FSL, freesurfer etc. use chrome remote desktop.
 
-I **highly** recommend you organize your code into git hub repositories, or repos. For instructions on getting your github credentials set up on ARTOO, see here.
+I **highly** recommend you organize your code into git hub repositories, or repos. For instructions on getting your github credentials set up on ARTOO, [see here](tutorials/git_setup.md).
 
-To work remotely using VSCode do:
-1. Download chrome remote desktop: https://remotedesktop.google.com/
-2. Hit ctrl/cmd + shift + P and start typing  Remote-SSH: Connect to Host
-3. Plug in your connection info (e.g., tuc66980@cla19779.tu.temple.edu)
-
-Sometimes we want to browse through the files from our comptuer without using the terminal. 
-
-To mount artoo on PCs: 
-1. install https://github.com/winfsp/sshfs-win
-2. Right click on ThisPC and select "map network"
-3. Select a drive and paste: \\sshfs\tuc66980@cla19779.tu.temple.edu\..\..\zpool\
-
-To mount artoo on macs:
-1. ask someone with a mac to figure it out...
 
 
 
