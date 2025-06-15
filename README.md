@@ -1,2 +1,4 @@
 # vlad-lab
-Assorted Vlad-Lab files
+Assorted Vlad-Lab documnentation
+
+

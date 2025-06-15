@@ -68,11 +68,15 @@ To address this, the workstation has [anaconda](https://docs.conda.io/projects/c
 
 ## General Recommendations
 
+Take a look at the [bash tutorail file](tutorials/bash_startup.md) for some commonly used bash commands
+
 The best way to work on ARTOO is via the terminal or VSCode. VSCode supports both data and figure visualization via Jupyter notebooks and you can even visualize neural data using nilearn. 
 
 If you need to browse through files or need a GUI for something like FSL, freesurfer etc. use chrome remote desktop.
 
 I **highly** recommend you organize your code into git hub repositories, or repos. For instructions on getting your github credentials set up on ARTOO, [see here](tutorials/git_setup.md).
+
+
 
 
 
