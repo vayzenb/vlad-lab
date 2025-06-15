@@ -33,7 +33,7 @@ Contact Vlad or George about setting this up
 
 ### Organization of the workstation
 
-Artoo is split into **/zpool/vladlab** and **/zpool/olsonlab** directories
+ARTOO is split into **/zpool/vladlab** and **/zpool/olsonlab** directories
 
 Within each lab directory is a **data_drive** and a **active_drive** folder. 
 
@@ -62,13 +62,13 @@ MRI: FSL, Freesurfer 8.0.0 & 7.4.1*, AFNI, ANTS, wb_workbench
 
 Different tasks may require different code libraries or packages. Each might have their own dependancies and installing too many of these in the same place can cause them to interfere with eachother. 
 
-To address this, the workstation has [anaconda](https://docs.conda.io/projects/conda/en/stable/user-guide/cheatsheet.html) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch, scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
+To address this, the workstation has [anaconda](tutorials/anaconda.md) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch, scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
 
 **You will not be able to install things into the base environment**
 
 ## General Recommendations
 
-Take a look at the [bash tutorail file](tutorials/bash_startup.md) for some commonly used bash commands
+Take a look at the [bash tutorial file](tutorials/bash_startup.md) for some commonly used bash commands
 
 The best way to work on ARTOO is via the terminal or VSCode. VSCode supports both data and figure visualization via Jupyter notebooks and you can even visualize neural data using nilearn. 
 

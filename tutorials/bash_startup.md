@@ -47,7 +47,6 @@ screen -ls #list all the screens you currently have
 ```
 
 
-
 ### File Operations
 
 ```bash
@@ -94,6 +93,9 @@ env                                # Show all environment variables
 echo $VARIABLE                         # Display specific variable
 
 ```
+
+## File Transfer
+
 
 ## Tips for Effective Bash Usage
 
