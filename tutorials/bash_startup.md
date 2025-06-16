@@ -63,6 +63,14 @@ mv file.txt /path/to/directory/     # Move file to directory
 rm filename.txt                     # Remove file
 rm -rf directory/                   # Force remove directory (be careful!)
 
+# Sync folder contents
+rsync -avz --progress source_dir/ destination_dir/  # Synchronize directories (useful for backups)
+
+# Transfer files to/from ARTOO (or any remote server)
+# Note: you would run this command from your  machine, not on ARTOO
+scp local_file.txt your_tuid@cla19779.tu.temple.edu:/path/to/destination/  # Copy file to ARTOO 
+scp -r local_directory/ your_tuid@cla19779.tu.temple.edu:/path/to/destination/  # Copy directory to ARTOO
+
 ```
 
 ### Directory Operations
@@ -93,9 +101,6 @@ env                                # Show all environment variables
 echo $VARIABLE                         # Display specific variable
 
 ```
-
-## File Transfer
-
 
 ## Tips for Effective Bash Usage
 
