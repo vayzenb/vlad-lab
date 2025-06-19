@@ -11,6 +11,8 @@ contact info: vayzenb@temple.edu
 1. Reach out to Vlad (vayzenb@temple.edu) to request access. Include your TU Username (e.g., tuc66980)
 2. If you plan to connect from home, ask your PI to request a VPN account for you
 3. If you are connecting from a Windows computer, install [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install)
+4. Download Chrome Remote Desktop from the [Chrome Web Store](https://chrome.google.com/webstore/detail/chrome-remote-desktop/).
+5. If you plan to use VSCode, install it from [here](https://code.visualstudio.com/Download) and install the Remote-SSH extension
 
 ## Connecting to the Artoo
 
