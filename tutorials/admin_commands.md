@@ -24,6 +24,8 @@ groups [username]
 # Show group info
 getent group [groupname]
 
+#reset your terminal after being added to a group
+exec bash
 ```
 
 
