@@ -5,6 +5,10 @@
 ```bash
 ssh username@cla19779.tu.temple.edu
 
+
+#after vlad adds you to the groups do
+exec bash
+
 # open chrome remote desktop and follow instructions to add your account
 ```
 
