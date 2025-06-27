@@ -44,7 +44,7 @@ conda info --envs
 
 ```bash
 # Create environment with default Python version
-conda create --name myproject
+conda create --name myproject python
 
 # Create environment with specific Python version
 conda create --name myproject python=3.9
