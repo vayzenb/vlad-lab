@@ -108,3 +108,27 @@ echo $VARIABLE                         # Display specific variable
 2. **Use wildcards** - `*` matches any characters, `?` matches single character
 3. **Chain commands** - Use `&&` for conditional execution, `;` for sequential execution
 4. Run code in screens!
+
+
+## Advanced!
+
+Modifying your `.bashrc` file can help you customize your terminal experience. In general, the rule is to only **add** to your .bashrc file, not to modify existing lines. This way, you can always revert back to the original settings if needed.
+
+1. In remote desktop, go to your home directory /home/your_username:
+2. Press Ctrl+H to show hidden files
+3. Open the `.bashrc` file in a text editor (e.g., sublime text)
+
+Here are some common modifications:
+Create a shortcut to a frequently used directory:
+```bash
+# Add this line to your .bashrc file
+alias mydir='cd /zpool/vladlab/vayzenb'  # Replace with your directory path
+alias datadir='cd /zpool/vladlab/data_drive'  # Replace with your data directory path
+```
+
+Set your terminal to cd to a specific directory on startup:
+```bash
+# Add this line to your .bashrc file
+cd /zpool/vladlab/vayzenb  # Replace with your directory path
+
+```
