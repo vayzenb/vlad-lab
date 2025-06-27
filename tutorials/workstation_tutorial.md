@@ -24,9 +24,12 @@ mkdir your_username #e.g., mkdir vayzenb
 ```
 
 ## Let's create a conda environment for fMRI analysis
+
+
 ```bash
 # Create a new conda environment named 'fmri'
-conda create -n fmri
+# this instantiates a new conda environment with the name 'fmri' and installs Python
+conda create --name fmri python 
 conda activate fmri
 
 # Check that the correct Python version is being used
@@ -42,11 +45,14 @@ conda install pandas seaborn
 pip install nilearn fmriprep-docker
 ```
 
+[See here, for a more detailed guide on how to use anaconda](anaconda_tutorial.md)
+
 ### Let's test that the environment works
 ```bash
 #check that you have access to docker
 docker --version
 fmriprep-docker --help
+#hit yes to the prompt about installing the docker image
 
 # Check that python is working and packages were installed
 python
@@ -55,16 +61,17 @@ import nilearn
 print(nilearn.__version__)
 ```
 
-
 ## Connect to the workstation throuhgh VSCode
 1. Open VSCode
-2. Select extensions on the left-hand side
-3. Install Remote- SSH and Remote Viewer (basically all the Microsoft remote apps)
-4. Open the command palette (ctrl/cmd + shift + P)
-5. Start typing Remote-SSH connect to host
-6. Paste your connection info: username@cla19779.tu.temple.edu
-7. Open the folder you created in your active drive: /zpool/vladlab/active_drive/your_username
-8. Open an integrated terminal in VSCode (View > Terminal)
+2. Select extensions on the left-hand side and install the following extensions:
+   - Remote-SSH
+   - Jupyter
+   - Python
+3. Open the command palette (ctrl/cmd + shift + P)
+4. Start typing Remote-SSH connect to host
+5. Paste your connection info: username@cla19779.tu.temple.edu
+6. Open the folder you created in your active drive: /zpool/vladlab/active_drive/your_username
+7. Open an integrated terminal in VSCode (View > Terminal)
 
 ### Let's create a jupyter notebook to look at some data
 1. Open the command palette (ctrl/cmd + shift + P)
@@ -97,22 +104,40 @@ plotting.view_img(zstat, title='Sample fMRI Image', threshold=3.0)
 
 ## Connect to the workstation through Chrome Remote Desktop
 
-1. Check folder browser
-2. Test some GUIs ine at a time
+1. Open Chrome Remote Desktop
+2. Select the computer you want to connect to. By default it is called CLA19779.tu.temple.edu
+3. Enter the PIN you set up when you added your account
+4. Select Ubuntu as your desktop environment
+
+### Setting up your desktop environment on Remote Desktop
+
+First lets set up a shortcut to your lab's drive
+1. Open the folder browser on the left-hand side
+2. Select + Other Locations
+3. Navigate to Computer > zpool 
+4. Drag the vladlab or olsonlab folder to the left hand side to bookmark it
+
+Let's also set up some shortcuts to commonly used apps
+1. Open the apps menu in the bottom left corner (9 dots)
+2. Search for terminal and drag it to the left-hand side to pin it
+3. Search for VSCode and drag it to the left-hand side to pin it
+4. Search for surfer and drag it to the left-hand side to pin it
+
+Next, let's test that we can run some common neuroimaging software
+Open the terminal and test the following commands:
 
 ```bash
 fsl
 fsleyes
 freeview
-afni
 suma
 ```
-3. Let's install mrtix into your fmri conda environment
+Let's install mrtix into your fmri conda environment
 ```bash
 conda activate fmri
 conda install -c conda-forge -c MRtrix3 mrtrix3 libstdcxx-ng
 ```
-4. Test mrtrix
+Test mrtrix
 ```bash
 mrview
 ```

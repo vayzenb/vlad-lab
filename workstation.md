@@ -12,26 +12,17 @@ contact info: vayzenb@temple.edu
 2. If you plan to connect from home, ask your PI to request a VPN account for you
 3. If you are connecting from a Windows computer, install [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install)
 4. Download Chrome Remote Desktop from the [Chrome Web Store](https://chrome.google.com/webstore/detail/chrome-remote-desktop/).
-5. If you plan to use VSCode, install it from [here](https://code.visualstudio.com/Download) and install the Remote-SSH extension
+5. Install VSCode from [here](https://code.visualstudio.com/Download)
+6. Walk through the [workstation tutorial](tutorials/workstation_tutorial.md) to make sure everything is set up correctly
+
 
 ## Connecting to the Artoo
 
-### Using a terminal:
 ```bash
 ssh your_tuid@cla19779.tu.temple.edu
-# for example, ssh tuc66980@cla19779.tu.temple.edu
+# e.g., ssh tuc66980@cla19779.tu.temple.edu
 ```
-
-### Using VScode
-1. [Download VSCode ](https://code.visualstudio.com/)
-2. Select extensions on the left-hand side
-3. Install Remote- SSH and Remote Viewer (basically all the Microsoft remote apps)
-4. Open the command pallete (ctrl/cmd + shift + P)
-5. Start typing Remote-SSH connect to host
-6. Paste your connection info: your_tuid@cla19779.tu.temple.edu
-
-### Using chrome remote desktop
-Contact Vlad or George about setting this up
+See the [workstation tutorial](tutorials/workstation_tutorial.md) for more ways to connect
 
 ### Organization of the workstation
 
@@ -64,11 +55,13 @@ MRI: FSL, Freesurfer 8.0.0 & 7.4.1*, AFNI, ANTS, wb_workbench
 
 Different tasks may require different code libraries or packages. Each might have their own dependancies and installing too many of these in the same place can cause them to interfere with eachother. 
 
-To address this, the workstation has [anaconda](tutorials/anaconda.md) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch, scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
+To address this, the workstation has [anaconda](tutorials/anaconda_tutorial.md) installed system wide. Anaconda allows users to create seperate coding environments for differnt where packages or libraries can be installed. For example, you may want one environment for fmri analysis packages (e.g., fmriprep, nilearn), machine learning (e.g., pytorch, scikit-learn), or to try out a some risky looking code base that might otherwise break everything.
 
 **You will not be able to install things into the base environment**
 
 ## General Recommendations
+
+Go through the [workstation tutorial](tutorials/workstation_tutorial.md) to make sure everything is set up correctly and see some ways to get started with the workstation
 
 Take a look at the [bash tutorial file](tutorials/bash_startup.md) for some commonly used bash commands
 
