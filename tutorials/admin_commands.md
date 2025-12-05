@@ -9,6 +9,7 @@ id $USER
 # List users
 ls /home
 
+
 # Add user to group
 sudo usermod -aG group username
 
@@ -46,11 +47,18 @@ apt search keyword
 
 ## File Permissions
 ```bash
+
+# view all files and their permissions
+ls -l 
+
 # Change permissions
 
 #common permission codes are: granted (r), write (w), execute (x)
 chmod 755 file
 chmod g+rw file
+
+# add group permissions to directory recusrively
+chmod -R g+rwx /path/to/folder
 
 # Change ownership
 sudo chown user:group file

@@ -35,7 +35,7 @@ parser = argparse.ArgumentParser(description='Model Training')
 parser.add_argument('--data', required=False,
                     help='path to folder that contains train and val folders', 
                     default=None)
-parser.add_argument('-o', '--output_path', default=None,
+parser.add_argument('-o', '--output_path', default=f'{git_dir}/weights',
                     help='path for storing ')
 parser.add_argument('--arch', default='resnet50',
                     help='which model to train')
@@ -226,6 +226,7 @@ for epoch in range(start_epoch, n_epochs+1):
         #pdb.set_trace()
 
         decode_out = decoder(encoder_out)
+        
         #print(output.shape)
         # calculate the batch loss
 

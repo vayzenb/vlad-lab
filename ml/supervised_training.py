@@ -11,6 +11,10 @@ git_dir = cwd.split(project_name)[0] + project_name
 import sys
 #add git_dir to path
 sys.path.append(git_dir)
+import pdb
+
+
+
 import argparse, shutil
 
 import torch
@@ -22,7 +26,6 @@ from torchvision import transforms
 import numpy as np
 import timm
 
-import pdb
 
 from glob import glob as glob
 #from model_loader import load_model as load_model
@@ -30,11 +33,14 @@ from glob import glob as glob
 
 print('libs loaded')
 
+#image_dir = '/zpool/vladlab/data_drive/stimulus_sets/modeling_images'
+#out_dir = f'{git_dir}/weights'
+
+
 parser = argparse.ArgumentParser(description='Model Training')
-parser.add_argument('--data', required=False,
-                    help='path to folder that contains train and val folders', 
-                    default=None)
-parser.add_argument('-o', '--output_path', default=None,
+parser.add_argument('--data', default='/zpool/vladlab/data_drive/stimulus_sets/modeling_images/', required=False,
+                    help='path to folder that contains train and val folders')
+parser.add_argument('-o', '--output_path', default=f'{git_dir}/weights', type=str,
                     help='path for storing ')
 parser.add_argument('--arch', default='mobilenetv3_small_050.lamb_in1k',
                     help='which model to train')
@@ -86,6 +92,7 @@ image_type = args.data
 image_type=image_type.split('/')[-2]
 model_type = f'{args.arch}_{image_type}{suf}'
 print(model_type)
+#model_type = 'vladmodel'
 
 best_prec1 = 0
 
@@ -99,6 +106,8 @@ n_classes = len(glob(f'{args.data}/train/*'))
 load model
 '''
 model = timm.create_model(args.arch, pretrained=True)
+#model = timm.create_model('mobilenetv3_small_050.lamb_in1k', pretrained=True)
+
 #model = timm.create_model('vgg11', pretrained=True)
 
 
@@ -107,14 +116,7 @@ model = timm.create_model(args.arch, pretrained=True)
 #pdb.set_trace()
 
 #new classifier
-new_classifier = nn.Sequential(
-                      nn.AdaptiveAvgPool2d((7, 7)),
-                      nn.Flatten(),
-                      nn.Dropout(0.),
-                      nn.Linear(4096, n_classes),
-                      
-                      nn.Flatten(),
-                      )
+
 
 #pdb.set_trace()
 #replace the model classifier with the new classifier
@@ -198,11 +200,13 @@ for epoch in range(start_epoch, n_epochs+1):
     ###################
     model.train()
     
+    
     for data, target in trainloader:
         # move tensors to GPU if CUDA is available
 
 
         data, target = data.to(device), target.to(device)
+        
             #print('moved to cuda')
         # clear the gradients of all optimized variables
         optimizer.zero_grad()
@@ -283,3 +287,5 @@ for epoch in range(start_epoch, n_epochs+1):
                 'best_prec1': best_prec1,
                 'optimizer' : optimizer.state_dict(),
             }, is_best,epoch,filename=f'{model_type}')
+    
+    #pdb.set_trace()
