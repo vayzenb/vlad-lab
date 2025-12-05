@@ -47,6 +47,10 @@ model_name = model_arch
 stim_dir = sys.argv[2]
 out_dir = sys.argv[3]
 
+#if out_dir doesn't exist, create it
+
+os.makedirs(out_dir, exist_ok=True)
+
 '''
 #specify weights file
 if len(sys.argv) == 2:
@@ -71,6 +75,7 @@ def extract_acts(model, image_dir, transform, layer_call):
     
 
     #set up hook to specified layer
+    #This helps us access intermediate model features
     def _store_feats(layer, inp, output):
         """An ugly but effective way of accessing intermediate model features
         """
@@ -92,7 +97,7 @@ def extract_acts(model, image_dir, transform, layer_call):
 
 
 
-    #Iterate through each image and extract activations
+    '''set up data loaders for current folder'''
 
     imNum = 0
     n=0
@@ -104,14 +109,15 @@ def extract_acts(model, image_dir, transform, layer_call):
 
 
     with torch.no_grad():
+        '''loop through images '''
         
         for data, label in testloader:
             
             #print(label)
             # move tensors to GPU if CUDA is available
-            
             data= data.to(device)
             
+            #pass image through model and extract features
             _model_feats = []
             model(data)
             #output = model(data)
@@ -141,6 +147,7 @@ model = model.to(device)
 #check if model is on gpu or cpu
 print(next(model.parameters()).is_cuda)
 
+'''loop through stimulus folders'''
 for cat_dir in stim_folder:
     print(cat_dir)
     #VIT runs out of memory quickly, so we delete and reload it after every iteration
@@ -149,15 +156,13 @@ for cat_dir in stim_folder:
         model = model.to(device)
         
 
-    
+    #pass model and folder name into extract_acts function
     cat_name = cat_dir.split('/')[-1]
     print(model_arch, cat_name)
     acts = extract_acts(model, cat_dir, transform, layer_call)
 
     
-
-    
-    
+    #save acts as numpy file
     np.save(f'{out_dir}/{model_name}{suf}_{cat_name}.npy', acts)
     #clear memory
     del acts
