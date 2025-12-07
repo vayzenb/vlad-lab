@@ -142,7 +142,11 @@ def extract_acts(model, image_dir, transform, layer_call):
 
 model, transform, layer_call = load_model(model_arch)
 
+
+
 model = model.to(device)
+print(model)
+print(layer_call)
 
 #check if model is on gpu or cpu
 print(next(model.parameters()).is_cuda)

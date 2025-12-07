@@ -89,7 +89,7 @@ def load_model(model_arch, weights=None):
     elif model_arch == 'convnext':
         model = convnext_large(weights=ConvNeXt_Large_Weights.DEFAULT)
         transform = ConvNeXt_Large_Weights.IMAGENET1K_V1.transforms()
-        layer_call = "getattr(getattr(model,'module'),'avgpool')"
+        layer_call = "getattr(model,'avgpool')"
 
     elif model_arch == 'vit':
         model = timm.create_model('vit_base_patch16_224_miil', pretrained=True)
