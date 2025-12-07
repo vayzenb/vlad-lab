@@ -24,18 +24,10 @@ print('gpu #', torch.cuda.current_device())
 device = torch.device('cuda')
 #device = torch.device('cpu')
 
-#create acts folder if it doesn't exist
-if not os.path.exists(f'{git_dir}/modelling/acts'):
-    os.makedirs(f'{git_dir}/modelling/acts')
-#check if cuda is available
 
-#stim_dir = f'{curr_dir}/stim/test'
-#stim_dir = f'/user_data/vayzenbe/image_sets/kornet_images'
-#stim_dir = '/mnt/DataDrive2/vlad/kornet/image_sets/kornet_images'
-#train_set = 'imagenet_sketch'
-
-#layer = ['avgpool','avgpool','ln',['decoder','avgpool']]
-
+'''
+Set params
+'''
 #check length of sys.argv
 if len(sys.argv) < 2:
     print('please specify model architecture')
@@ -63,7 +55,7 @@ elif len(sys.argv) == 3:
 
     
 
-stim_folder = glob(f'{stim_dir}/*')
+stim_folder = glob(f'{stim_dir}/*/')
 
 
 suf = ''
@@ -161,7 +153,10 @@ for cat_dir in stim_folder:
         
 
     #pass model and folder name into extract_acts function
-    cat_name = cat_dir.split('/')[-1]
+    #take off last slash
+    #pdb.set_trace()
+    cat_name = cat_dir.rstrip('/').split('/')[-1]
+    #cat_name = cat_dir.split('/')[-1]
     print(model_arch, cat_name)
     acts = extract_acts(model, cat_dir, transform, layer_call)
 
