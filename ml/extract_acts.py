@@ -26,7 +26,8 @@ device = torch.device('cuda')
 
 
 '''
-Set params
+Set script arguments
+what you need for the script to run
 '''
 #check length of sys.argv
 if len(sys.argv) < 2:
@@ -54,7 +55,7 @@ elif len(sys.argv) == 3:
 '''
 
     
-
+#grab image folders from the stimlus directory
 stim_folder = glob(f'{stim_dir}/*/')
 
 
@@ -116,7 +117,7 @@ def extract_acts(model, image_dir, transform, layer_call):
             
             out = np.vstack(_model_feats)
             
-            
+            pdb.set_trace()
 
             if n == 0:
                 acts = out
@@ -154,13 +155,13 @@ for cat_dir in stim_folder:
 
     #pass model and folder name into extract_acts function
     #take off last slash
-    #pdb.set_trace()
+    pdb.set_trace()
     cat_name = cat_dir.rstrip('/').split('/')[-1]
     #cat_name = cat_dir.split('/')[-1]
     print(model_arch, cat_name)
     acts = extract_acts(model, cat_dir, transform, layer_call)
 
-    
+    pdb.set_trace()
     #save acts as numpy file
     np.save(f'{out_dir}/{model_name}{suf}_{cat_name}.npy', acts)
     #clear memory

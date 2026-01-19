@@ -105,7 +105,7 @@ def load_model(model_arch, weights=None):
     elif model_arch == 'resnext50':
         model = resnext50_32x4d(weights=ResNeXt50_32X4D_Weights.DEFAULT)
         transform = ResNeXt50_32X4D_Weights.DEFAULT.transforms()
-        layer_call = "getattr(getattr(model,'module'),'avgpool')"
+        layer_call = "getattr(model,'avgpool')"
     
     elif model_arch == 'ShapeNet':
         model = resnet50(weights=None)
