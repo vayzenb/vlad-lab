@@ -127,7 +127,7 @@ for sub, ses in zip(subject_id, ses):
             func_nifti_file = f'{func_nifti_dir}/sub-{sub}_ses-{ses}_task-{task_name}_run-{run}_bold.nii.gz'
             outlier_file = f'{func_nifti_dir}/sub-{sub}_ses-{ses}_task-{task_name}_run-{run}_motion_outliers.tsv'
             bash_cmd = f'fsl_motion_outliers -i {func_nifti_file} -o {outlier_file}'
-            pdb.set_trace()
+            
             subprocess.run(bash_cmd, check=True, shell=True)
 '''
 
